@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/beaulthy-dashboard/static/css/main.b800bb81.chunk.css",
+    "main.js": "/beaulthy-dashboard/static/js/main.2c63403b.chunk.js",
+    "main.js.map": "/beaulthy-dashboard/static/js/main.2c63403b.chunk.js.map",
+    "runtime-main.js": "/beaulthy-dashboard/static/js/runtime-main.855cb590.js",
+    "runtime-main.js.map": "/beaulthy-dashboard/static/js/runtime-main.855cb590.js.map",
+    "static/css/2.a95be28f.chunk.css": "/beaulthy-dashboard/static/css/2.a95be28f.chunk.css",
+    "static/js/2.45eea637.chunk.js": "/beaulthy-dashboard/static/js/2.45eea637.chunk.js",
+    "static/js/2.45eea637.chunk.js.map": "/beaulthy-dashboard/static/js/2.45eea637.chunk.js.map",
+    "static/js/3.ab2f95c5.chunk.js": "/beaulthy-dashboard/static/js/3.ab2f95c5.chunk.js",
+    "static/js/3.ab2f95c5.chunk.js.map": "/beaulthy-dashboard/static/js/3.ab2f95c5.chunk.js.map",
+    "index.html": "/beaulthy-dashboard/index.html",
+    "static/css/2.a95be28f.chunk.css.map": "/beaulthy-dashboard/static/css/2.a95be28f.chunk.css.map",
+    "static/css/main.b800bb81.chunk.css.map": "/beaulthy-dashboard/static/css/main.b800bb81.chunk.css.map",
+    "static/js/2.45eea637.chunk.js.LICENSE.txt": "/beaulthy-dashboard/static/js/2.45eea637.chunk.js.LICENSE.txt",
+    "static/media/Blogo.0cf55096.png": "/beaulthy-dashboard/static/media/Blogo.0cf55096.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.855cb590.js",
+    "static/css/2.a95be28f.chunk.css",
+    "static/js/2.45eea637.chunk.js",
+    "static/css/main.b800bb81.chunk.css",
+    "static/js/main.2c63403b.chunk.js"
+  ]
+}
