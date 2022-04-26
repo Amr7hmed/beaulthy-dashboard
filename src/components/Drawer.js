@@ -15,6 +15,8 @@ import {
   SolutionOutlined,
   TeamOutlined,
   QuestionOutlined,
+  SlidersOutlined,
+  CarryOutOutlined,
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 
@@ -179,6 +181,23 @@ export default function Drawer2({ visible, setvisible }) {
           <Menu.Item key="/AddFqas">
             <Link to="/AddFqas">Add Fqas</Link>
           </Menu.Item>
+        </SubMenu>
+
+        <SubMenu key="17" icon={<SlidersOutlined />} title="Sliders">
+            <Menu.Item key="/sliderlist">
+              <Link to="/sliderlist">Slider List</Link>
+            </Menu.Item>
+
+            <Menu.Item key="/createslider">
+              <Link to="/createslider">Create Slider</Link>
+            </Menu.Item>
+        </SubMenu>
+
+        <SubMenu key="18" icon={<CarryOutOutlined />} title="Page Header">
+
+            <Menu.Item key="/pageheader">
+              <Link to="/pageheader">Page Header</Link>
+            </Menu.Item>
         </SubMenu>
 
         {/* <SubMenu key="sub1" icon={<MailOutlined />} title="Navigation One">

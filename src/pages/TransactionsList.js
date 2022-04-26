@@ -33,6 +33,7 @@ export default function TransactionsList() {
     axios(options)
       .then(function (response) {
         console.log("    handle success");
+        console.log(response.data);
         setResponse(response.data.data.data);
         setPages(response.data.data.meta);
 
@@ -46,6 +47,7 @@ export default function TransactionsList() {
   }, []);
 
   const columns = [
+
     {
       title: "id",
       dataIndex: "id",
@@ -153,7 +155,6 @@ export default function TransactionsList() {
         console.log("    handle success");
         setResponse(response.data.data.data);
         setPages(response.data.data.meta);
-
         setPending(false);
         console.log(response.data.data.data);
       })

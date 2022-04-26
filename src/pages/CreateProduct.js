@@ -144,7 +144,7 @@ export default function CreateProduct() {
     axios(options)
       .then(function (response) {
         success();
-        console.log(response);
+        console.log("response",response);
         setLoading(false);
         setServerMsg(null);
       })
@@ -220,49 +220,7 @@ export default function CreateProduct() {
     }
   };
 
-  // const fileData2 = () => {
-  //   if (selectedFiles) {
-  //     let images = [];
-
-  //     for (let i = 0; i < selectedFiles.length; i++) {
-  //       images.push(URL.createObjectURL(selectedFiles[i]));
-  //     }
-  //     return (
-  //       <div>
-  //         {images.map((img) => {
-  //           <>
-  //             {console.log("hello", img)}
-  //             <img src={img} style={{ width: "200px" }} />
-  //             <h1>hello</h1>
-  //           </>;
-  //         })}
-  //       </div>
-  //     );
-  //   } else {
-  //     return (
-  //       <div>
-  //         <br />
-  //         <h4>Choose before Pressing the Upload button</h4>
-  //       </div>
-  //     );
-  //   }
-  // };
-
   return (
-    //
-    //     <input type="file" onChange={(event) => onFileChange(event)} />
-
-    //     <input
-    //       type="file"
-    //       onChange={(event) => onFileChange2(event)}
-    //       multiple
-    //     />
-
-    //     <button onClick={() => onFileUpload()}>Upload!</button>
-    //   </div>
-    //   {fileData()}
-    //   {fileData2()}
-    // </div>
 
     <Container>
       <Col md={6} xs={12} className="py-5 mx-auto">
@@ -548,11 +506,9 @@ export default function CreateProduct() {
                 <Select.Check
                   type="checkbox"
                   label="active"
-                  // onChange={(e) => console.log(e.target.checked)}
                   onChange={FormikProps.handleChange("active")}
                   name="active"
                   id="stoactiveck"
-                  onChange={FormikProps.handleChange("active")}
                   value={FormikProps.values.active}
                   onBlur={FormikProps.handleBlur}
                 />
@@ -562,11 +518,9 @@ export default function CreateProduct() {
                 <Select.Check
                   type="checkbox"
                   label="featured"
-                  // onChange={(e) => console.log(e.target.checked)}
                   onChange={FormikProps.handleChange("featured")}
                   name="featured"
                   id="featured"
-                  onChange={FormikProps.handleChange("featured")}
                   value={FormikProps.values.featured}
                   onBlur={FormikProps.handleBlur}
                 />
@@ -594,20 +548,13 @@ export default function CreateProduct() {
               {fileData2()}
 
               <div>
-                {/* <button type="submit">
-                {loading ? <LoadingOutlined /> : "Create"}
-              </button> */}
-
-                {/* <Button type="submit" isLoading={loading}>
-                Continue
-              </Button> */}
 
                 <Button
                   type="submit"
                   disabled={loading}
-                  style={{ width: "100%", minHeight: "30px" }}
-                  // startIcon={<SaveIcon />}
                   style={{
+                    width: "100%",
+                    minHeight: "30px",
                     borderRadius: 35,
                     backgroundColor: "black",
                     padding: "10px ",

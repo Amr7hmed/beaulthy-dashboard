@@ -36,6 +36,7 @@ export default function Login() {
 
   const submit = function name(params) {
     setLoading(true);
+    console.log(params)
     const options = {
       method: "post",
       url: `${process.env.REACT_APP_API_BASEURL}/api/admin/login`,

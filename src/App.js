@@ -52,6 +52,9 @@ import AddPartner from "./pages/AddPartner";
 import FqasList from "./pages/FqasList";
 import AddFqas from "./pages/AddFqas";
 import EditFqas from "./pages/EditFqas";
+import CreateSlider from "./pages/sliders/CreateSlider.jsx";
+import Sliderlist from "./pages/sliders/Sliderlist";
+import PageHeader from "./pages/pageheader/PageHeader";
 
 require("dotenv").config();
 
@@ -195,6 +198,23 @@ function App() {
             <PrivateRoute component={FqasList} path="/Fqas" exact />
             <PrivateRoute component={AddFqas} path="/AddFqas" exact />
             <PrivateRoute component={EditFqas} path="/EditFqas/:id" exact />
+
+            <PrivateRoute
+              component={Sliderlist}
+              path="/sliderlist"
+              exact
+            />
+            <PrivateRoute
+              component={CreateSlider}
+              path="/createslider"
+              exact
+            />
+            <PrivateRoute
+              component={PageHeader}
+              path="/pageheader"
+              exact
+            />
+
           </Switch>
         </div>
       </HashRouter>
