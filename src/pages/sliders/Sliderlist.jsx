@@ -89,12 +89,7 @@ export default function Sliderlist() {
                     cover={
                       <img
                         alt="example"
-                        src={info.image}
-                        onError={(e) => {
-                          e.target.onerror = null;
-                          e.target.src =
-                            "https://www.aaronfaber.com/wp-content/uploads/2017/03/product-placeholder-wp.jpg";
-                        }}
+                        src={info.photo}
                       />
                     }
                     actions={[

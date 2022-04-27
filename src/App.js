@@ -55,6 +55,9 @@ import EditFqas from "./pages/EditFqas";
 import CreateSlider from "./pages/sliders/CreateSlider.jsx";
 import Sliderlist from "./pages/sliders/Sliderlist";
 import PageHeader from "./pages/pageheader/PageHeader";
+import EditPageHeader from "./pages/pageheader/EditPageHeader";
+import Partitions from "./pages/Partitions/Partitions";
+import EditPartitions from "./pages/Partitions/EditPartitions";
 
 require("dotenv").config();
 
@@ -199,22 +202,21 @@ function App() {
             <PrivateRoute component={AddFqas} path="/AddFqas" exact />
             <PrivateRoute component={EditFqas} path="/EditFqas/:id" exact />
 
+            <PrivateRoute component={Sliderlist} path="/sliderlist" exact />
+            <PrivateRoute component={CreateSlider} path="/createslider" exact />
+            <PrivateRoute component={PageHeader} path="/pageheader" exact />
             <PrivateRoute
-              component={Sliderlist}
-              path="/sliderlist"
-              exact
-            />
-            <PrivateRoute
-              component={CreateSlider}
-              path="/createslider"
-              exact
-            />
-            <PrivateRoute
-              component={PageHeader}
-              path="/pageheader"
+              component={EditPageHeader}
+              path="/pageheader/:id"
               exact
             />
 
+            <PrivateRoute component={Partitions} path="/partitions" exact />
+            <PrivateRoute
+              component={EditPartitions}
+              path="/partitions/:id"
+              exact
+            />
           </Switch>
         </div>
       </HashRouter>
