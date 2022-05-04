@@ -13,9 +13,11 @@ export default function FetchDataApi(
       setData(response.data.data);
       setServerMsg(null);
       setDataLoading(false);
+      console.log(response)
     })
 
     .catch(function (error) {
       message.error(`somthing wrong , ${error}`);
+      console.log(error)
     });
 }

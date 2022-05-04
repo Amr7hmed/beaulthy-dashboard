@@ -55,7 +55,7 @@ export default function PageHeader() {
       render: (text, record) => (
         <Space size="middle" key={record.id}>
           <Link
-            to={`/PageHeader/EditPageHeader/${record.id}`}
+            to={`/pageheader/${record.id}`}
             className="btn btn btn-info text-white"
           >
             <i className="fa fa-edit me-1" aria-hidden="true"></i>

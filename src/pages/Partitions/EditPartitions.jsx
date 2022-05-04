@@ -78,9 +78,9 @@ export default function EditPartitions(props) {
     // Update the formData object
     formDataa.append("photo", selectedFile);
     formDataa.append("title[en]", values.enTitle);
-    formDataa.append("sub_title[en]", values.enSubTitle);
-    formDataa.append("description[en]", values.enDescription);
-    formDataa.append("short_description[en]", values.enShortDescription);
+    formDataa.append("title[ar]", values.arTitle);
+    
+    formDataa.append('group', 'fuoimzxfcvxavhkhksktwafrlptnfwrmwtvpnlbgrugx');
     formDataa.append("active", 1);
     const options = {
       method: "post",
@@ -118,9 +118,7 @@ export default function EditPartitions(props) {
           <Formik
             initialValues={{
               enTitle: data.title.en,
-              enSubTitle: data.sub_title.en,
-              enDescription: data.description.en,
-              enShortDescription: data.short_description.en,
+              arTitle: data.title.ar,
             }}
             enableReinitialize
             onSubmit={(values, actions) => {
@@ -141,10 +139,10 @@ export default function EditPartitions(props) {
                 </div>
 
                 <InputGroup className="mb-3">
-                  <InputGroup.Text>Title</InputGroup.Text>
+                  <InputGroup.Text>En Title</InputGroup.Text>
                   <FormControl
                     type="text"
-                    placeholder="Title"
+                    placeholder="En Title"
                     name="enTitle"
                     id="enTitle"
                     onChange={FormikProps.handleChange("enTitle")}
@@ -161,67 +159,26 @@ export default function EditPartitions(props) {
                 </InputGroup>
 
                 <InputGroup className="mb-3">
-                  <InputGroup.Text> Sub Title</InputGroup.Text>
+                  <InputGroup.Text> Ar Title</InputGroup.Text>
                   <FormControl
                     type="text"
-                    placeholder="Sub Title"
-                    name="enSubTitle"
-                    id="enSubTitle"
-                    onChange={FormikProps.handleChange("enSubTitle")}
-                    value={FormikProps.values.enSubTitle}
+                    placeholder="Ar Title"
+                    name="arTitle"
+                    id="arTitle"
+                    onChange={FormikProps.handleChange("arTitle")}
+                    value={FormikProps.values.arTitle}
                     onBlur={FormikProps.handleBlur}
                     required
                   />
-                  {FormikProps.touched.enSubTitle &&
-                  FormikProps.errors.enSubTitle ? (
+                  {FormikProps.touched.arTitle &&
+                  FormikProps.errors.arTitle ? (
                     <small className="text-danger text-center w-100">
-                      {FormikProps.touched.enSubTitle &&
-                        FormikProps.errors.enSubTitle}
+                      {FormikProps.touched.arTitle &&
+                        FormikProps.errors.arTitle}
                     </small>
                   ) : null}
                 </InputGroup>
 
-                <InputGroup className="mb-3">
-                  <InputGroup.Text> Description</InputGroup.Text>
-                  <FormControl
-                    type="text"
-                    placeholder="Description"
-                    name="enDescription"
-                    id="enDescription"
-                    onChange={FormikProps.handleChange("enDescription")}
-                    value={FormikProps.values.enDescription}
-                    onBlur={FormikProps.handleBlur}
-                    required
-                  />
-                  {FormikProps.touched.enDescription &&
-                  FormikProps.errors.enDescription ? (
-                    <small className="text-danger text-center w-100">
-                      {FormikProps.touched.enDescription &&
-                        FormikProps.errors.enDescription}
-                    </small>
-                  ) : null}
-                </InputGroup>
-
-                <InputGroup className="mb-3">
-                  <InputGroup.Text>Short Description</InputGroup.Text>
-                  <FormControl
-                    type="text"
-                    placeholder="Short Description"
-                    name="enShortDescription"
-                    id="enShortDescription"
-                    onChange={FormikProps.handleChange("enShortDescription")}
-                    value={FormikProps.values.enShortDescription}
-                    onBlur={FormikProps.handleBlur}
-                    required
-                  />
-                  {FormikProps.touched.enShortDescription &&
-                  FormikProps.errors.enShortDescription ? (
-                    <small className="text-danger text-center w-100">
-                      {FormikProps.touched.enShortDescription &&
-                        FormikProps.errors.enShortDescription}
-                    </small>
-                  ) : null}
-                </InputGroup>
 
                 <div className=" text-right ">
                   <button className="btn btn-primary w-100" type="submit">

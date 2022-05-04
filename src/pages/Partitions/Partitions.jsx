@@ -34,23 +34,10 @@ export default function Partitions() {
       key: "id",
     },
     {
-      title: "sub_title",
-      dataIndex: "sub_title",
-      key: "sub_title",
+      title: "Title",
+      dataIndex: "title",
+      key: "title",
     },
-
-    {
-      title: "description",
-      dataIndex: "description",
-      key: "description",
-    },
-
-    {
-      title: "short_description",
-      dataIndex: "short_description",
-      key: "short_description",
-    },
-
     {
       title: "Photo",
       dataIndex: "photo",
@@ -65,7 +52,7 @@ export default function Partitions() {
       render: (text, record) => (
         <Space size="middle" key={record.id}>
           <Link
-            to={`/Partitions/EditPartitions/${record.id}`}
+            to={`/partitions/${record.id}`}
             className="btn btn btn-info text-white"
           >
             <i className="fa fa-edit me-1" aria-hidden="true"></i>
