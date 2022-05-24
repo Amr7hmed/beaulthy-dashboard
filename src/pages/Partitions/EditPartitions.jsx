@@ -24,7 +24,7 @@ export default function EditPartitions(props) {
   const [formLoading, setFormLoading] = useState(false);
 
   const success = () => {
-    message.success("You Are Successfully Create Category");
+    message.success("You Are Successfully The Partitions");
   };
 
   const errors = () => {
@@ -78,9 +78,9 @@ export default function EditPartitions(props) {
     // Update the formData object
     formDataa.append("photo", selectedFile);
     formDataa.append("title[en]", values.enTitle);
-    formDataa.append("title[ar]", values.arTitle);
-    
-    formDataa.append('group', 'fuoimzxfcvxavhkhksktwafrlptnfwrmwtvpnlbgrugx');
+    formDataa.append("sub_title[en]", values.enSubTitle);
+    formDataa.append("description[en]", values.enDescription);
+    formDataa.append("short_description[en]", values.enShortDescription);
     formDataa.append("active", 1);
     const options = {
       method: "post",
@@ -118,7 +118,6 @@ export default function EditPartitions(props) {
           <Formik
             initialValues={{
               enTitle: data.title.en,
-              arTitle: data.title.ar,
             }}
             enableReinitialize
             onSubmit={(values, actions) => {
@@ -139,10 +138,10 @@ export default function EditPartitions(props) {
                 </div>
 
                 <InputGroup className="mb-3">
-                  <InputGroup.Text>En Title</InputGroup.Text>
+                  <InputGroup.Text>Title</InputGroup.Text>
                   <FormControl
                     type="text"
-                    placeholder="En Title"
+                    placeholder="Title"
                     name="enTitle"
                     id="enTitle"
                     onChange={FormikProps.handleChange("enTitle")}
@@ -158,26 +157,7 @@ export default function EditPartitions(props) {
                   ) : null}
                 </InputGroup>
 
-                <InputGroup className="mb-3">
-                  <InputGroup.Text> Ar Title</InputGroup.Text>
-                  <FormControl
-                    type="text"
-                    placeholder="Ar Title"
-                    name="arTitle"
-                    id="arTitle"
-                    onChange={FormikProps.handleChange("arTitle")}
-                    value={FormikProps.values.arTitle}
-                    onBlur={FormikProps.handleBlur}
-                    required
-                  />
-                  {FormikProps.touched.arTitle &&
-                  FormikProps.errors.arTitle ? (
-                    <small className="text-danger text-center w-100">
-                      {FormikProps.touched.arTitle &&
-                        FormikProps.errors.arTitle}
-                    </small>
-                  ) : null}
-                </InputGroup>
+
 
 
                 <div className=" text-right ">

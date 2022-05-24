@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 import { Pagination } from "antd";
 import { Card } from "antd";
-import DeleteSliderbtn from '../../components/DeleteSlider';
+import DeleteSliderbtn from './DeleteSlider.jsx';
 
 const { Meta } = Card;
 

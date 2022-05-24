@@ -1,3 +1,4 @@
+import "./style.css";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Pagination, Space, Table } from "antd";
@@ -44,7 +45,7 @@ export default function PageHeader() {
       title: "Photo",
       dataIndex: "photo",
       key: "photo",
-      width: "75%",
+      width: "100px",
 
       render: (t, r) => <img src={`${r.photo}`} alt="Header" />,
     },
@@ -55,8 +56,8 @@ export default function PageHeader() {
       render: (text, record) => (
         <Space size="middle" key={record.id}>
           <Link
-            to={`/pageheader/${record.id}`}
-            className="btn btn btn-info text-white"
+            to={`/EditPageHeader/${record.id}`}
+            className="btn btn btn-info text-white text-center"
           >
             <i className="fa fa-edit me-1" aria-hidden="true"></i>
             Edit
@@ -66,7 +67,8 @@ export default function PageHeader() {
     },
   ];
   return (
-    <main className="mx-auto py-3 w-100">
+    <main className="mx-auto py-3 w-90 pageheader">
+      {console.log(columns)}
       <Container>
         <div className="d-flex justify-content-between align-items-center">
           <h1 className="fw-bold">Page Header</h1>
@@ -78,8 +80,8 @@ export default function PageHeader() {
           bordered
           loading={dataLoading}
           pagination={false}
-          rowClassName={"tableRow"}
-          scroll={{ x: 800 }}
+          rowClassName={"colSpan"}
+          scroll={{ x: 400 }}
           size={"small"}
         />
         <div className="d-flex align-items-center justify-content-center py-3">

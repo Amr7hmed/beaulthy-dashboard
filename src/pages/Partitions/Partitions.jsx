@@ -38,6 +38,7 @@ export default function Partitions() {
       dataIndex: "title",
       key: "title",
     },
+
     {
       title: "Photo",
       dataIndex: "photo",
@@ -52,7 +53,7 @@ export default function Partitions() {
       render: (text, record) => (
         <Space size="middle" key={record.id}>
           <Link
-            to={`/partitions/${record.id}`}
+            to={`/EditPartitions/${record.id}`}
             className="btn btn btn-info text-white"
           >
             <i className="fa fa-edit me-1" aria-hidden="true"></i>
@@ -63,7 +64,7 @@ export default function Partitions() {
     },
   ];
   return (
-    <main className="mx-auto py-3 w-100">
+    <main className="mx-auto py-3 w-100 pageheader">
       <Container>
         <div className="d-flex justify-content-between align-items-center">
           <h1 className="fw-bold">Partitions</h1>

@@ -20,7 +20,7 @@ import EditSingleProduct from "./pages/EditSingleProduct";
 import CreateProduct from "./pages/CreateProduct";
 import PrivateRoute from "./routes/PrivateRoute";
 import PublicRoute from "./routes/PublicRoute";
-import CategoriesList from "./pages/CategoriesList";
+import CategoriesList from "./pages/category/CategoriesList";
 import CreateCategory from "./pages/CreateCategory";
 import EditCategory from "./pages/EditCategory";
 import DiscountsList from "./pages/DiscountsList";
@@ -58,6 +58,7 @@ import PageHeader from "./pages/pageheader/PageHeader";
 import EditPageHeader from "./pages/pageheader/EditPageHeader";
 import Partitions from "./pages/Partitions/Partitions";
 import EditPartitions from "./pages/Partitions/EditPartitions";
+import AddCategory from "./pages/category/AddCategory";
 
 require("dotenv").config();
 
@@ -100,15 +101,16 @@ function App() {
             />
 
             <PrivateRoute component={CategoriesList} path="/Categories" exact />
-            <PrivateRoute
-              component={CreateCategory}
-              path="/CreateCategory"
-              exact
-            />
 
             <PrivateRoute
               component={EditCategory}
               path="/EditCategory/:id"
+              exact
+            />
+
+            <PrivateRoute
+              component={AddCategory}
+              path="/addcategory/:id"
               exact
             />
 
@@ -207,14 +209,14 @@ function App() {
             <PrivateRoute component={PageHeader} path="/pageheader" exact />
             <PrivateRoute
               component={EditPageHeader}
-              path="/pageheader/:id"
+              path="/EditPageHeader/:id"
               exact
             />
 
             <PrivateRoute component={Partitions} path="/partitions" exact />
             <PrivateRoute
               component={EditPartitions}
-              path="/partitions/:id"
+              path="/EditPartitions/:id"
               exact
             />
           </Switch>

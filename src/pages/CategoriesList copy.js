@@ -14,7 +14,7 @@ import DeleteBtn from "../components/DeleteUserBtn.js";
 import { Pagination } from "antd";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import DeleteCategoryBtn from "../components/DeleteCategoryBtn";
+import DeleteCategoryBtn from "./category/DeleteCategoryBtn";
 
 export default function CategoriesList() {
   const user = useSelector((state) => state.user.data);

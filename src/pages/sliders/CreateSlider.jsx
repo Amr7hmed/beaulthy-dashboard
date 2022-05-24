@@ -235,8 +235,6 @@ export default function CreateSlider() {
                       backgroundColor: "black",
                       padding: "10px ",
                       fontSize: "18px",
-                      width: "100%",
-                      minHeight: "30px",
                       color: "white",
                     }}>
                   {formLoading ? <Spinner /> : "Create"}

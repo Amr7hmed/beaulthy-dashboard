@@ -91,7 +91,7 @@ export default function CreateContent() {
   useEffect(() => {
     const options = {
       method: "get",
-      url: `${process.env.REACT_APP_API_BASEURL}/api/admin/all-static-content`,
+      url: `${process.env.REACT_APP_API_BASEURL}/api/admin/static-content`,
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json;charset=UTF-8",
@@ -101,15 +101,14 @@ export default function CreateContent() {
 
     axios(options)
       .then(function (response) {
-        console.log("    handle success");
+        console.log("handle success");
         setResponse(response.data.data);
-
         setLoading(false);
 
         console.log("dataaaa", response.data.data);
       })
       .catch(function (error) {
-        console.log("    hande error");
+        console.log("hande error");
         console.log(error.response);
       });
   }, []);
@@ -124,8 +123,6 @@ export default function CreateContent() {
             <Formik
               initialValues={{}}
               onSubmit={(values, actions) => {
-                // console.log(values, items.key);
-
                 submit(items.key, values);
               }}
             >

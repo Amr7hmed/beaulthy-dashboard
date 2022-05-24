@@ -17,7 +17,7 @@ export default function EditPageHeader(props) {
   let history = useHistory();
 
   const success = () => {
-    message.success("You Are Successfully Create Employee");
+    message.success("You Are Successfully Create PaheHeader");
   };
 
   const errors = () => {

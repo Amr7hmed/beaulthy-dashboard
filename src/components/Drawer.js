@@ -50,8 +50,8 @@ export default function Drawer2({ visible, setvisible }) {
         theme="dark"
       >
         <SubMenu key="1" icon={<SettingOutlined />} title="Users">
-          <Menu.Item key="/Users">
-            <Link to="/Users">Users List</Link>
+          <Menu.Item key="/">
+            <Link to="/">Users List</Link>
           </Menu.Item>
           <Menu.Item key="/CreateUser">
             <Link to="/CreateUser">Create User</Link>
