@@ -62,7 +62,7 @@ export default function CategoryDeleteBtn({ info, user, update, setPages }) {
     });
   };
   return (
-    <Button onClick={() => showDeleteConfirm()} type="dashed">
+    <Button onClick={() => showDeleteConfirm()} type="dashed" className="btn btn-danger">
       Delete
     </Button>
   );

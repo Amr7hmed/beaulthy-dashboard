@@ -46,6 +46,7 @@ export default function CreateClientCategory(props) {
           en: values.name,
         },
         active: 1,
+        parent_id:props.match.params.id,
       },
     };
 
