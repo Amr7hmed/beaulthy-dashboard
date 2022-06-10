@@ -206,9 +206,19 @@ export default function Drawer2({ visible, setvisible }) {
             <Menu.Item key="/partitions">
               <Link to="/partitions">Partitions</Link>
             </Menu.Item>
-            
-
         </SubMenu>
+
+
+        <SubMenu key="20" icon={<CarryOutOutlined />} title="City">
+            <Menu.Item key="/citylist">
+              <Link to="/citylist">City List</Link>
+            </Menu.Item>
+
+            <Menu.Item key="/createcity">
+              <Link to="/createcity">Create City</Link>
+            </Menu.Item>
+        </SubMenu>
+
 
         {/* <SubMenu key="sub1" icon={<MailOutlined />} title="Navigation One">
           <Menu.ItemGroup key="g1" title="Item 1">

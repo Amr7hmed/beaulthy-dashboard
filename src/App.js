@@ -59,6 +59,8 @@ import EditPageHeader from "./pages/pageheader/EditPageHeader";
 import Partitions from "./pages/Partitions/Partitions";
 import EditPartitions from "./pages/Partitions/EditPartitions";
 import AddCategory from "./pages/category/AddCategory";
+import CityList from "./pages/city/citylist";
+import CreateCity from "./pages/city/createcity";
 
 require("dotenv").config();
 
@@ -219,6 +221,8 @@ function App() {
               path="/EditPartitions/:id"
               exact
             />
+            <PrivateRoute component={CityList} path="/citylist" exact />
+            <PrivateRoute component={CreateCity} path="/createcity" exact />
           </Switch>
         </div>
       </HashRouter>
