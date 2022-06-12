@@ -21,7 +21,6 @@ import CreateProduct from "./pages/CreateProduct";
 import PrivateRoute from "./routes/PrivateRoute";
 import PublicRoute from "./routes/PublicRoute";
 import CategoriesList from "./pages/category/CategoriesList";
-import CreateCategory from "./pages/CreateCategory";
 import EditCategory from "./pages/EditCategory";
 import DiscountsList from "./pages/DiscountsList";
 import CreateDiscount from "./pages/CreateDiscount";
@@ -61,6 +60,9 @@ import EditPartitions from "./pages/Partitions/EditPartitions";
 import AddCategory from "./pages/category/AddCategory";
 import CityList from "./pages/city/citylist";
 import CreateCity from "./pages/city/createcity";
+import Districtlist from "./pages/city/Districtlist";
+import AddDistrict from "./pages/city/AddDistrict";
+import CreateCategory from "./pages/category/CreateCategory";
 
 require("dotenv").config();
 
@@ -223,6 +225,15 @@ function App() {
             />
             <PrivateRoute component={CityList} path="/citylist" exact />
             <PrivateRoute component={CreateCity} path="/createcity" exact />
+            <PrivateRoute component={Districtlist} path="/districtlist" exact />
+            
+            <PrivateRoute
+              component={AddDistrict}
+              path="/adddistrict/:id"
+              exact
+            />
+
+<PrivateRoute component={CreateCategory} path="/CreateCategory" exact />
           </Switch>
         </div>
       </HashRouter>

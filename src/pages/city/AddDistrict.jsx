@@ -14,7 +14,7 @@ import { message } from "antd";
 import Loading from "../../components/Loading";
 import { useHistory } from "react-router-dom";
 
-export default function CreateCity(props) {
+export default function AddDistrict(props) {
   const user = useSelector((state) => state.user.data);
   let history = useHistory();
 
@@ -37,10 +37,11 @@ export default function CreateCity(props) {
     formDataa.append("name[ar]", values.Arabic_Name);
     formDataa.append("price", values.price);
     formDataa.append("active", values.active === false ? 0 : 1);
+    formDataa.append("city_id", props.match.params.id);
 
     const options = {
       method: "post",
-      url: `${process.env.REACT_APP_API_BASEURL}/api/admin/cities`,
+      url: `${process.env.REACT_APP_API_BASEURL}/api/admin/districts`,
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json;charset=UTF-8",
@@ -57,7 +58,7 @@ export default function CreateCity(props) {
 
         setServerMsg([]);
         setFormLoading(false);
-        history.push("/citylist");
+        history.push("/districtlist");
       })
 
       .catch(function (error) {
@@ -71,7 +72,7 @@ export default function CreateCity(props) {
   return (
     <main className="w-100">
       <Container>
-        <h1 className="text-center">Create City </h1>
+        <h1 className="text-center">Create District </h1>
         <Formik
           initialValues={{
             Arabic_Name: "",

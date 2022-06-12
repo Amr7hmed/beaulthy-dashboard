@@ -217,6 +217,10 @@ export default function Drawer2({ visible, setvisible }) {
             <Menu.Item key="/createcity">
               <Link to="/createcity">Create City</Link>
             </Menu.Item>
+            
+            <Menu.Item key="/districtlist">
+              <Link to="/districtlist">District List</Link>
+            </Menu.Item>
         </SubMenu>
 
 

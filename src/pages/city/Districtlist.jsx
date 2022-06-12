@@ -4,25 +4,22 @@ import { useSelector } from "react-redux";
 import Loading from "../../components/Loading";
 import {Table,Space} from "antd";
 import { Container } from "react-bootstrap";
-import DeleteBtn from "../../components/DeleteUserBtn.js";
-import { Pagination } from "antd";
+import DeleteDistrictBtn from "./DeleteDistrictBtn.jsx";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
 
-export default function CategoriesList() {
+export default function Districtlist() {
   
   const [response, setResponse] = useState("");
   const [Pending, setPending] = useState(true);
-  const [Pages, setPages] = useState("");
-  const [currentPage, setCurrentPage] = useState(1);
 
   const user = useSelector((state) => state.user.data);
 
   useEffect(() => {
     const options = {
       method: "get",
-      url: `${process.env.REACT_APP_API_BASEURL}/api/admin/categories`,
+      url: `${process.env.REACT_APP_API_BASEURL}/api/admin/districts`,
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json;charset=UTF-8",
@@ -34,9 +31,8 @@ export default function CategoriesList() {
       .then(function (response) {
         console.log("handle success");
         setResponse(response.data.data.data);
-        setPages(response.data.data.meta);
         setPending(false);
-        console.log(response.data);
+        console.log(response.data.data);
       })
       .catch(function (error) {
         console.log("hande error");
@@ -58,6 +54,12 @@ export default function CategoriesList() {
       render: (text) => <>{text}</>,
     },
     {
+      title: "Price",
+      dataIndex: "price",
+      key: "price",
+      render: (number) => <>{number}</>,
+    },
+    {
       title: "active",
       dataIndex: "active",
       key: "active",
@@ -70,39 +72,17 @@ export default function CategoriesList() {
       key: "action",
       render: (text, record) => (
         <Space size="middle" key={record.id}>
-          <Link to={`/addcategory/${record.id}`} class="btn btn-success">Add Category</Link>
+          <DeleteDistrictBtn
+          info={record}
+          user={user}
+          update={setResponse}
+          />
         </Space>
       ),
     },
   ];
 
 
-  const onPagination = (id) => {
-    setCurrentPage(id);
-    setPending(true);
-    const options = {
-      method: "get",
-      url: `${process.env.REACT_APP_API_BASEURL}/api/admin/categories?page=${id}`,
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json;charset=UTF-8",
-        Authorization: `Bearer ${user.token}`,
-      },
-    };
-    axios(options)
-      .then(function (response) {
-        console.log("    handle success");
-        setResponse(response.data.data.data);
-        setPages(response.data.data.meta);
-
-        setPending(false);
-        console.log(response.data.data.data);
-      })
-      .catch(function (error) {
-        console.log("    hande error");
-        console.log(error);
-      });
-  };
   
 
 
@@ -119,20 +99,11 @@ export default function CategoriesList() {
             pagination={false}
             expandable={{
               expandedRowRender: (record) =>
-                // <p style={{ margin: 0 }}>{record.children}</p>
                 console.log("res", record),
               rowExpandable: (record) => record.children === null,
             }}
           />
 
-          <div className="d-flex align-items-center justify-content-center py-3">
-            <Pagination
-              defaultCurrent={currentPage}
-              total={Pages.total}
-              onChange={(e) => onPagination(e)}
-              showSizeChanger={false}
-            />
-          </div>
         </Container>
       )}
     </div>
