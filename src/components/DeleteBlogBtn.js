@@ -24,7 +24,7 @@ export default function DeleteBlogBtn({ info, user, update }) {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json;charset=UTF-8",
-      Authorization: `Bearer ${user.token}`,
+      Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
     },
   };
 

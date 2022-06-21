@@ -223,6 +223,13 @@ export default function Drawer2({ visible, setvisible }) {
             </Menu.Item>
         </SubMenu>
 
+        <SubMenu key="21" icon={<CarryOutOutlined />} title="Orders">
+            <Menu.Item key="/orderslist">
+              <Link to="/orderslist">Orders List</Link>
+            </Menu.Item>
+
+        </SubMenu>
+
 
         {/* <SubMenu key="sub1" icon={<MailOutlined />} title="Navigation One">
           <Menu.ItemGroup key="g1" title="Item 1">

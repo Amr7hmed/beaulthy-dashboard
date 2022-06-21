@@ -26,7 +26,7 @@ export default function TransactionsList() {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json;charset=UTF-8",
-        Authorization: `Bearer ${user.token}`,
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
     };
 
@@ -39,6 +39,7 @@ export default function TransactionsList() {
 
         setPending(false);
         console.log(response.data.data.data);
+        console.log(response.data.data.data[1].user.name);
       })
       .catch(function (error) {
         console.log("    hande error");
@@ -55,8 +56,8 @@ export default function TransactionsList() {
     },
     {
       title: "user id",
-      dataIndex: "user_id",
-      key: "user_id",
+      dataIndex: "user{name}",
+      key: "user{name}",
       render: (text) => <>{text}</>,
     },
     {
@@ -117,21 +118,6 @@ export default function TransactionsList() {
       key: "updated_at",
       render: (text) => <>{text}</>,
     },
-    //   {
-    //     title: "Action",
-    //     key: "action",
-    //     render: (text, record) => (
-    //       <Space size="middle" key={record.id}>
-    //         <Link to={`/EditCategory/${record.id}`}>Edit</Link>
-    //         <DeleteCategoryBtn
-    //           info={record}
-    //           user={user}
-    //           update={setResponse}
-    //           setPages={setPages}
-    //         />
-    //       </Space>
-    //     ),
-    //   },
   ];
 
   const [response, setResponse] = useState("");
@@ -147,7 +133,7 @@ export default function TransactionsList() {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json;charset=UTF-8",
-        Authorization: `Bearer ${user.token}`,
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
     };
     axios(options)
@@ -185,6 +171,7 @@ export default function TransactionsList() {
               showSizeChanger={false}
             />
           </div>
+          
         </Container>
       )}
     </div>

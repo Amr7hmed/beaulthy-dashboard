@@ -65,7 +65,7 @@ export default function EditSingleProduct(props) {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json;charset=UTF-8",
-        Authorization: `Bearer ${user.token}`,
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
     };
 
@@ -85,7 +85,7 @@ export default function EditSingleProduct(props) {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json;charset=UTF-8",
-        Authorization: `Bearer ${user.token}`,
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
     };
 
@@ -107,7 +107,7 @@ export default function EditSingleProduct(props) {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json;charset=UTF-8",
-        Authorization: `Bearer ${user.token}`,
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
     };
 
@@ -238,7 +238,7 @@ export default function EditSingleProduct(props) {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json;charset=UTF-8",
-        Authorization: `Bearer ${user.token}`,
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
       data: {
         category_id: values.category_id,
@@ -289,7 +289,7 @@ export default function EditSingleProduct(props) {
         headers: {
           Accept: "application/json",
           "Content-Type": "multipart/form-data",
-          Authorization: `Bearer ${user.token}`,
+          Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
         },
         data: formDataa,
       };
@@ -331,7 +331,7 @@ export default function EditSingleProduct(props) {
         headers: {
           Accept: "application/json",
           "Content-Type": "multipart/form-data",
-          Authorization: `Bearer ${user.token}`,
+          Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
         },
         data: formDataa,
       };
@@ -361,7 +361,7 @@ export default function EditSingleProduct(props) {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/x-www-form-urlencoded",
-        Authorization: `Bearer ${user.token}`,
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
     };
 

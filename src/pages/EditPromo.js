@@ -40,7 +40,7 @@ export default function EditPromo(props) {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json;charset=UTF-8",
-        Authorization: `Bearer ${user.token}`,
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
     };
 
@@ -66,7 +66,7 @@ export default function EditPromo(props) {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json;charset=UTF-8",
-        Authorization: `Bearer ${user.token}`,
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
       data: {
         name: { en: values.nameEn, ar: values.nameAr },

@@ -64,7 +64,7 @@ export default function EditPartitions(props) {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json;charset=UTF-8",
-        Authorization: `Bearer ${user.token}`,
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
     };
     FetchDataApi(options, setData, setDataLoading, setServerMsg);
@@ -88,7 +88,7 @@ export default function EditPartitions(props) {
       headers: {
         Accept: "application/json",
         "Content-Type": "multipart/form-data",
-        Authorization: `Bearer ${user.token}`,
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
       data: formDataa,
     };

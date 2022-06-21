@@ -63,6 +63,8 @@ import CreateCity from "./pages/city/createcity";
 import Districtlist from "./pages/city/Districtlist";
 import AddDistrict from "./pages/city/AddDistrict";
 import CreateCategory from "./pages/category/CreateCategory";
+import OrdersList from "./pages/orders/orderslist";
+import Order from "./pages/orders/order";
 
 require("dotenv").config();
 
@@ -226,14 +228,20 @@ function App() {
             <PrivateRoute component={CityList} path="/citylist" exact />
             <PrivateRoute component={CreateCity} path="/createcity" exact />
             <PrivateRoute component={Districtlist} path="/districtlist" exact />
-            
+
             <PrivateRoute
               component={AddDistrict}
               path="/adddistrict/:id"
               exact
             />
 
-<PrivateRoute component={CreateCategory} path="/CreateCategory" exact />
+            <PrivateRoute
+              component={CreateCategory}
+              path="/CreateCategory"
+              exact
+            />
+            <PrivateRoute component={OrdersList} path="/orderslist" exact />
+            <PrivateRoute component={Order} path="/order/:id" exact />
           </Switch>
         </div>
       </HashRouter>

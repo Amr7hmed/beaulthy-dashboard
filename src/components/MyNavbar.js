@@ -69,7 +69,7 @@ export default function PrimarySearchAppBar({ drawr, visible }) {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json;charset=UTF-8",
-        Authorization: `Bearer ${user.token}`,
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
     };
 
@@ -77,6 +77,7 @@ export default function PrimarySearchAppBar({ drawr, visible }) {
       .then(function (response) {
         console.log("    handle success");
 
+        localStorage.removeItem("token");
         console.log(response.data.message);
         success("You have logged out successfully");
         history.push("/");

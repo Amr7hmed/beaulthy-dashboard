@@ -29,8 +29,6 @@ export default function Login() {
   let history = useHistory();
   let dispatch = useDispatch();
 
-  // const data = useSelector((state) => state.user.data);
-
   const [serverMsg, setServerMsg] = useState("");
   const [loading, setLoading] = useState("");
 
@@ -59,19 +57,13 @@ export default function Login() {
         let login = async function () {
           console.log("    handle success");
           setServerMsg(null);
-
+          localStorage.setItem("token", JSON.stringify(response.data.data.token));
           console.log(response.data);
           dispatch(SetUser(response.data));
           setLoading(false);
-
           return response.data;
         };
         login().then((data) =>
-          // data.status_code !== 200
-          //   ?
-          //    setServerMsg(response.data.message)
-          //   :
-
           history.push("/Users")
         );
       })

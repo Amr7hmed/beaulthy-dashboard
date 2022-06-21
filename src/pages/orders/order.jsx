@@ -4,22 +4,20 @@ import { useSelector } from "react-redux";
 import Loading from "../../components/Loading";
 import {Table,Space} from "antd";
 import { Container } from "react-bootstrap";
-import DeleteDistrictBtn from "./DeleteDistrictBtn.jsx";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
 
-export default function Districtlist() {
+export default function Order(props) {
   
   const [response, setResponse] = useState("");
   const [Pending, setPending] = useState(true);
 
-  const user = useSelector((state) => state.user.data);
 
   useEffect(() => {
     const options = {
       method: "get",
-      url: `${process.env.REACT_APP_API_BASEURL}/api/admin/districts`,
+      url: `${process.env.REACT_APP_API_BASEURL}/api/admin/orders/${props.match.params.id}`,
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json;charset=UTF-8",
@@ -48,38 +46,54 @@ export default function Districtlist() {
       key: "id",
     },
     {
-      title: "Name",
-      dataIndex: "name",
-      key: "name",
+      title: "Status",
+      dataIndex: "status",
+      key: "status",
       render: (text) => <>{text}</>,
     },
     {
-      title: "Price",
-      dataIndex: "price",
-      key: "price",
+      title: "Total",
+      dataIndex: "total",
+      key: "total",
       render: (number) => <>{number}</>,
     },
     {
-      title: "active",
-      dataIndex: "active",
-      key: "active",
-      render: (text) =>
-        text === 0 ? "Not Active" : text === 1 ? "Active" : null,
+      title: "Total Promos",
+      dataIndex: "total_promos",
+      key: "total_promos",
+      render: (number) => <>{number}</>,
     },
-
     {
-      title: "Action",
-      key: "action",
-      render: (text, record) => (
-        <Space size="middle" key={record.id}>
-          <DeleteDistrictBtn
-          info={record}
-          user={user}
-          update={setResponse}
-          />
-        </Space>
-      ),
+      title: "Sub Total",
+      dataIndex: "sub_total",
+      key: "sub_total",
+      render: (number) => <>{number}</>,
     },
+    {
+      title: "Final Total",
+      dataIndex: "final_total",
+      key: "final_total",
+      render: (number) => <>{number}</>,
+    },
+    {
+      title: "Address",
+      dataIndex: "address",
+      key: "address",
+      render: (text) => <>{text}</>,
+    },
+    {
+      title: "City Price",
+      dataIndex: "city_price",
+      key: "city_price",
+      render: (number) => <>{number}</>,
+    },
+    {
+      title: "District Price",
+      dataIndex: "district_price",
+      key: "district_price",
+      render: (number) => <>{number}</>,
+    },
+    
   ];
 
 

@@ -52,7 +52,7 @@ export default function AddPartner() {
       headers: {
         Accept: "application/json",
         "Content-Type": "multipart/form-data",
-        Authorization: `Bearer ${user.token}`,
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
       data: formDataa,
     };

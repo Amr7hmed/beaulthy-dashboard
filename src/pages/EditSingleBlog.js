@@ -66,7 +66,7 @@ export default function EditSingleBlog(props) {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json;charset=UTF-8",
-        Authorization: `Bearer ${user.token}`,
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
     };
 
@@ -88,7 +88,7 @@ export default function EditSingleBlog(props) {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json;charset=UTF-8",
-        Authorization: `Bearer ${user.token}`,
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
     };
 
@@ -205,7 +205,7 @@ export default function EditSingleBlog(props) {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json;charset=UTF-8",
-        Authorization: `Bearer ${user.token}`,
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
       data: {
         title: { en: values.English_title, ar: values.Arabic_title },
@@ -255,7 +255,7 @@ export default function EditSingleBlog(props) {
         headers: {
           Accept: "application/json",
           "Content-Type": "multipart/form-data",
-          Authorization: `Bearer ${user.token}`,
+          Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
         },
         data: formDataa,
       };
@@ -297,7 +297,7 @@ export default function EditSingleBlog(props) {
         headers: {
           Accept: "application/json",
           "Content-Type": "multipart/form-data",
-          Authorization: `Bearer ${user.token}`,
+          Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
         },
         data: formDataa,
       };
@@ -327,7 +327,7 @@ export default function EditSingleBlog(props) {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/x-www-form-urlencoded",
-        Authorization: `Bearer ${user.token}`,
+        Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
     };
 

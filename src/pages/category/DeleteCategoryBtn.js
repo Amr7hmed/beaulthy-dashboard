@@ -24,7 +24,7 @@ export default function CategoryDeleteBtn({ info, user, update, setPages }) {
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json;charset=UTF-8",
-      Authorization: `Bearer ${user.token}`,
+      Authorization: `Bearer ${JSON.parse(localStorage.getItem("token"))}`,
     },
   };
 
