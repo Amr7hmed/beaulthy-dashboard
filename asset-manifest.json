@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/beaulthy-dashboard/static/css/main.1abdb1a2.chunk.css",
-    "main.js": "/beaulthy-dashboard/static/js/main.46516729.chunk.js",
-    "main.js.map": "/beaulthy-dashboard/static/js/main.46516729.chunk.js.map",
+    "main.js": "/beaulthy-dashboard/static/js/main.fe9d127b.chunk.js",
+    "main.js.map": "/beaulthy-dashboard/static/js/main.fe9d127b.chunk.js.map",
     "runtime-main.js": "/beaulthy-dashboard/static/js/runtime-main.0b61ee74.js",
     "runtime-main.js.map": "/beaulthy-dashboard/static/js/runtime-main.0b61ee74.js.map",
     "static/css/2.a95be28f.chunk.css": "/beaulthy-dashboard/static/css/2.a95be28f.chunk.css",
@@ -21,6 +21,6 @@
     "static/css/2.a95be28f.chunk.css",
     "static/js/2.c1fcf097.chunk.js",
     "static/css/main.1abdb1a2.chunk.css",
-    "static/js/main.46516729.chunk.js"
+    "static/js/main.fe9d127b.chunk.js"
   ]
 }
