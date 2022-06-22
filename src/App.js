@@ -73,11 +73,10 @@ function App() {
     <Provider store={store}>
       <HashRouter basename="/">
         <div className="App">
-          {console.log("oooh", process.env.REACT_APP_API_BASEURL)}
 
           <Navbar />
           <Switch>
-            <PublicRoute restricted={true} component={Login} path="/" exact />
+            <PublicRoute  component={Login} path="/" exact />
 
             <PrivateRoute component={UsersList} path="/Users" exact />
             <PrivateRoute component={EditUser} path="/EditUser/:id" exact />

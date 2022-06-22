@@ -4,7 +4,7 @@ import { Route, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
-  const user = useSelector((state) => state.user.data);
+  const user = JSON.parse(localStorage.getItem("token"))
 
   return (
     // Show the component only when the user is logged in
@@ -12,7 +12,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     <Route
       {...rest}
       render={(props) =>
-        user.token ? <Component {...props} /> : <Redirect to="/" />
+        user ? <Component {...props} /> : <Redirect to="/" />
       }
     />
   );

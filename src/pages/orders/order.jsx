@@ -1,10 +1,8 @@
 import React from 'react';
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
 import Loading from "../../components/Loading";
 import {Table,Space} from "antd";
 import { Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import axios from "axios";
 
 
@@ -12,6 +10,7 @@ export default function Order(props) {
   
   const [response, setResponse] = useState("");
   const [Pending, setPending] = useState(true);
+
 
 
   useEffect(() => {
@@ -28,9 +27,9 @@ export default function Order(props) {
     axios(options)
       .then(function (response) {
         console.log("handle success");
-        setResponse(response.data.data.data);
+        setResponse(response.data.data);
         setPending(false);
-        console.log(response.data.data);
+        console.log(response.data.data,"ressss");
       })
       .catch(function (error) {
         console.log("hande error");
@@ -46,58 +45,82 @@ export default function Order(props) {
       key: "id",
     },
     {
-      title: "Status",
-      dataIndex: "status",
-      key: "status",
+      title: "Order Id",
+      dataIndex: "order_id",
+      key: "order_id",
       render: (text) => <>{text}</>,
     },
     {
-      title: "Total",
-      dataIndex: "total",
+    title: "Product Name",
+    dataIndex: "product_name",
+     key: "product_name",
+     render: (text) => <>{text}</>,
+    },
+    {
+    title: "Quantity",
+    dataIndex: "quantity",
+     key: "quantity",
+     render: (number) => <>{number}</>,
+    },
+    {
+    title: "Price",
+    dataIndex: "price",
+     key: "price",
+     render: (number) => <>{number}</>,
+    },
+     {
+     title: "Total",
+     dataIndex: "total",
       key: "total",
       render: (number) => <>{number}</>,
-    },
-    {
-      title: "Total Promos",
-      dataIndex: "total_promos",
-      key: "total_promos",
-      render: (number) => <>{number}</>,
-    },
-    {
-      title: "Sub Total",
-      dataIndex: "sub_total",
-      key: "sub_total",
-      render: (number) => <>{number}</>,
-    },
-    {
-      title: "Final Total",
-      dataIndex: "final_total",
-      key: "final_total",
-      render: (number) => <>{number}</>,
-    },
-    {
-      title: "Address",
-      dataIndex: "address",
-      key: "address",
-      render: (text) => <>{text}</>,
-    },
-    {
-      title: "City Price",
-      dataIndex: "city_price",
-      key: "city_price",
-      render: (number) => <>{number}</>,
-    },
-    {
-      title: "District Price",
-      dataIndex: "district_price",
-      key: "district_price",
-      render: (number) => <>{number}</>,
-    },
+     },
+     {
+     title: "Image",
+     dataIndex: "product_image",
+      key: "product_image",
+      render: (img) => <img src={img} width="100" height="100"/>,
+     },
+    // {
+    //   title: "Total Promos",
+    //   dataIndex: "total_promos",
+    //   key: "total_promos",
+    //   render: (number) => <>{number}</>,
+    // },
+    // {
+    //   title: "Sub Total",
+    //   dataIndex: "sub_total",
+    //   key: "sub_total",
+    //   render: (number) => <>{number}</>,
+    // },
+    // {
+    //   title: "Final Total",
+    //   dataIndex: "final_total",
+    //   key: "final_total",
+    //   render: (number) => <>{number}</>,
+    // },
+    // {
+    //   title: "Address",
+    //   dataIndex: "address",
+    //   key: "address",
+    //   render: (text) => <>{text}</>,
+    // },
+    // {
+    //   title: "City Price",
+    //   dataIndex: "city_price",
+    //   key: "city_price",
+    //   render: (number) => <>{number}</>,
+    // },
+    // {
+    //   title: "District Price",
+    //   dataIndex: "district_price",
+    //   key: "district_price",
+    //   render: (number) => <>{number}</>,
+    // },
     
   ];
 
 
-  
+  console.log(response,"response");
 
 
   return (
@@ -106,17 +129,19 @@ export default function Order(props) {
         <Loading />
       ) : (
         <Container className="py-5">
-          <Table
-            bordered
-            columns={columns}
-            dataSource={response}
-            pagination={false}
-            expandable={{
-              expandedRowRender: (record) =>
-                console.log("res", record),
-              rowExpandable: (record) => record.children === null,
-            }}
-          />
+          {response && 
+            <Table
+              bordered
+              columns={columns}
+              dataSource={response.items}
+              pagination={false}
+              expandable={{
+                expandedRowRender: (record) =>
+                  console.log("res", record),
+                rowExpandable: (record) => record.children !== null,
+              }}
+            />
+          }
 
         </Container>
       )}

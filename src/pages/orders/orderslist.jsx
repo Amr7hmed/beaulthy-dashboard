@@ -1,15 +1,13 @@
-import React from 'react';
+import React from "react";
 import { useEffect, useState } from "react";
 import Loading from "../../components/Loading";
-import {Table,Space} from "antd";
+import { Table, Space } from "antd";
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { Pagination } from "antd";
 
-
 export default function OrdersList() {
-  
   const [response, setResponse] = useState("");
   const [Pending, setPending] = useState(true);
   const [Pages, setPages] = useState("");
@@ -39,7 +37,6 @@ export default function OrdersList() {
       });
   }, []);
 
-
   const columns = [
     {
       title: "id",
@@ -51,12 +48,6 @@ export default function OrdersList() {
       dataIndex: "status",
       key: "status",
       render: (text) => <>{text}</>,
-    },
-    {
-      title: "Total",
-      dataIndex: "total",
-      key: "total",
-      render: (number) => <>{number}</>,
     },
     {
       title: "Total Promos",
@@ -76,14 +67,41 @@ export default function OrdersList() {
       key: "final_total",
       render: (number) => <>{number}</>,
     },
-    
+    {
+      title: "Fees",
+      dataIndex: "fees",
+      key: "fees",
+      render: (number) => <>{number}</>,
+    },
+    {
+      title: "Payment Method",
+      dataIndex: "payment_method",
+      key: "payment_method",
+      render: (number) => (
+        <>
+          {number === 1
+            ? "credit card"
+            : number === 2
+            ? "Cash On Delivery"
+            : "Visa On Delivery"}
+        </>
+      ),
+    },
+    {
+      title: "Address",
+      dataIndex: "address",
+      key: "address",
+      render: (text) => <>{text}</>,
+    },
+
     {
       title: "Action",
       key: "action",
       render: (text, record) => (
-        <Space size="middle" key={record.id}>         
-         <Link to={`/order/${record.id}`} className="btn btn-success">Order</Link>
-        
+        <Space size="middle" key={record.id}>
+          <Link to={`/order/${record.id}`} className="btn btn-success">
+            Order
+          </Link>
         </Space>
       ),
     },
@@ -136,10 +154,8 @@ export default function OrdersList() {
               showSizeChanger={false}
             />
           </div>
-          
         </Container>
       )}
     </div>
   );
 }
-
