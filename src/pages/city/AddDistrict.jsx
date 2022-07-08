@@ -72,7 +72,7 @@ export default function AddDistrict(props) {
   return (
     <main className="w-100">
       <Container>
-        <h1 className="text-center">Create District </h1>
+        <h1 className="text-center">Create City </h1>
         <Formik
           initialValues={{
             Arabic_Name: "",

@@ -71,7 +71,7 @@ export default function CreateCity(props) {
   return (
     <main className="w-100">
       <Container>
-        <h1 className="text-center">Create City </h1>
+        <h1 className="text-center">Create Zone </h1>
         <Formik
           initialValues={{
             Arabic_Name: "",

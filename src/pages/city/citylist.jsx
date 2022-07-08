@@ -72,7 +72,7 @@ export default function CityList() {
       key: "action",
       render: (text, record) => (
         <Space size="middle" key={record.id}>         
-         <Link to={`/adddistrict/${record.id}`} className="btn btn-success">Add District</Link>
+         <Link to={`/adddistrict/${record.id}`} className="btn btn-success">Add City</Link>
           <DeleteCityBtn
           info={record}
           user={user}
